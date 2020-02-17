@@ -33,7 +33,6 @@ var gData =
   ]
 };
 
-
 function linkColor(link) {
   if (link.group == 0) {
     return '#1F85DE'
@@ -67,19 +66,16 @@ function colorize(node) {
 }
 
 function drawNodes(node) {
-  // use a sphere as a drag handle
   const obj = new THREE.Mesh(
     new THREE.SphereGeometry(10),
     new THREE.MeshBasicMaterial({ depthWrite: false, transparent: false, opacity: 1, color: colorize(node) })
   );
-  // add text sprite as child
   const sprite = new SpriteText(node.id);
   sprite.color = 'black';
   sprite.textHeight = 8;
   obj.add(sprite);
   return obj;
 }
-
 
 var order =
    [
